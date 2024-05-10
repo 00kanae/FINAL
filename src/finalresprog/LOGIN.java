@@ -36,15 +36,24 @@ public class LOGIN extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Type = new javax.swing.JComboBox<>();
         USER = new javax.swing.JTextField();
         PASS = new javax.swing.JPasswordField();
+        clear = new javax.swing.JButton();
         bgc = new javax.swing.JLabel();
         loginbtn = new javax.swing.JButton();
+        register = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Type.setBackground(new java.awt.Color(255, 153, 153));
+        Type.setForeground(new java.awt.Color(255, 153, 153));
+        Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "USER" }));
+        getContentPane().add(Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 80, 30));
+
         USER.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        USER.setOpaque(false);
         USER.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 USERActionPerformed(evt);
@@ -60,16 +69,33 @@ public class LOGIN extends javax.swing.JFrame {
         });
         getContentPane().add(PASS, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 410, 40));
 
-        bgc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Log-In.png"))); // NOI18N
+        clear.setBackground(new java.awt.Color(153, 0, 0));
+        clear.setForeground(new java.awt.Color(255, 255, 255));
+        clear.setText("Clear");
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 80, 30));
+
+        bgc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Log-In (1).png"))); // NOI18N
         getContentPane().add(bgc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 675));
 
-        loginbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Btn.png"))); // NOI18N
         loginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 460, 130, 60));
+        getContentPane().add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 450, 130, 70));
+
+        register.setText("jButton1");
+        register.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(register, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 110, 150, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,6 +112,20 @@ public class LOGIN extends javax.swing.JFrame {
     private void PASSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PASSActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PASSActionPerformed
+
+    private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
+        // TODO add your handling code here:
+        LOGIN.this.dispose();
+        RegistrationFrame registrationFrame = new RegistrationFrame(); // Create an instance of RegistrationFrame
+        registrationFrame.setVisible(true); // Make the RegistrationFrame visible
+        
+    }//GEN-LAST:event_registerActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        // TODO add your handling code here:
+        USER.setText(""); // Clear the user field
+        PASS.setText(""); // Clear the password field
+    }//GEN-LAST:event_clearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,9 +167,12 @@ public class LOGIN extends javax.swing.JFrame {
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField PASS;
+    private javax.swing.JComboBox<String> Type;
     private javax.swing.JTextField USER;
     private javax.swing.JLabel bgc;
+    private javax.swing.JButton clear;
     private javax.swing.JButton loginbtn;
+    private javax.swing.JButton register;
     // End of variables declaration//GEN-END:variables
 
    
