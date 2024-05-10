@@ -62,7 +62,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1200, 675));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         tab.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -195,11 +195,13 @@ public class HomeFrame extends javax.swing.JFrame {
 
         userTab.addTab("tab3", tab3);
 
-        getContentPane().add(userTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1200, 690));
+        getContentPane().add(userTab);
+        userTab.setBounds(0, -20, 1200, 690);
 
         PWhole.setPreferredSize(new java.awt.Dimension(1200, 675));
         PWhole.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(PWhole, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 680));
+        getContentPane().add(PWhole);
+        PWhole.setBounds(0, 0, 1200, 680);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

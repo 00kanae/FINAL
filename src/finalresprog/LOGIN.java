@@ -5,17 +5,15 @@
  */
 package finalresprog;
 
-import java.awt.Component;
-import java.awt.Graphics;
-import java.awt.Insets;
-import javax.swing.JButton;
-import javax.swing.border.Border;
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 
 /**
  *
  * @author Chupapi
  */
-public class LOGIN extends javax.swing.JFrame {
+public class LOGIN extends Connect {
 
     /**
      * Creates new form LOGIN
@@ -45,12 +43,13 @@ public class LOGIN extends javax.swing.JFrame {
         register = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(1200, 675));
+        getContentPane().setLayout(null);
 
         Type.setBackground(new java.awt.Color(255, 153, 153));
-        Type.setForeground(new java.awt.Color(255, 153, 153));
         Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "USER" }));
-        getContentPane().add(Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 80, 30));
+        getContentPane().add(Type);
+        Type.setBounds(300, 220, 80, 30);
 
         USER.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         USER.setOpaque(false);
@@ -59,7 +58,8 @@ public class LOGIN extends javax.swing.JFrame {
                 USERActionPerformed(evt);
             }
         });
-        getContentPane().add(USER, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 410, 40));
+        getContentPane().add(USER);
+        USER.setBounds(400, 260, 410, 40);
 
         PASS.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         PASS.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +67,8 @@ public class LOGIN extends javax.swing.JFrame {
                 PASSActionPerformed(evt);
             }
         });
-        getContentPane().add(PASS, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 410, 40));
+        getContentPane().add(PASS);
+        PASS.setBounds(400, 370, 410, 40);
 
         clear.setBackground(new java.awt.Color(153, 0, 0));
         clear.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,17 +78,20 @@ public class LOGIN extends javax.swing.JFrame {
                 clearActionPerformed(evt);
             }
         });
-        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 80, 30));
+        getContentPane().add(clear);
+        clear.setBounds(560, 530, 80, 30);
 
         bgc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Log-In (1).png"))); // NOI18N
-        getContentPane().add(bgc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 675));
+        getContentPane().add(bgc);
+        bgc.setBounds(0, 0, 1200, 675);
 
         loginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginbtnActionPerformed(evt);
             }
         });
-        getContentPane().add(loginbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(535, 450, 130, 70));
+        getContentPane().add(loginbtn);
+        loginbtn.setBounds(535, 450, 130, 70);
 
         register.setText("jButton1");
         register.addActionListener(new java.awt.event.ActionListener() {
@@ -95,13 +99,15 @@ public class LOGIN extends javax.swing.JFrame {
                 registerActionPerformed(evt);
             }
         });
-        getContentPane().add(register, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 110, 150, 60));
+        getContentPane().add(register);
+        register.setBounds(980, 110, 150, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         //USERNAME = USER.getText();
+        
         
     }//GEN-LAST:event_loginbtnActionPerformed
 
