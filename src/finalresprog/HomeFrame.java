@@ -18,6 +18,12 @@ public class HomeFrame extends javax.swing.JFrame {
      */
     public HomeFrame() {
         initComponents();
+        jDateChooser1.setEnabled(false);
+        partySize.setEnabled(false);
+        Time.setEnabled(false);
+        reservationFor.setEnabled(false);
+        status.setEnabled(false);
+        confirmChanges.setEnabled(false);
     }
 
     /**
@@ -54,10 +60,16 @@ public class HomeFrame extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         partySize = new javax.swing.JComboBox<>();
         Time = new javax.swing.JComboBox<>();
+        reservationFor = new javax.swing.JTextField();
+        status = new javax.swing.JTextField();
+        confirmChanges = new javax.swing.JButton();
+        cancelReservation = new javax.swing.JButton();
         Background2 = new javax.swing.JLabel();
         profileButt3 = new javax.swing.JButton();
         homeButt3 = new javax.swing.JButton();
         statusButt3 = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
         PWhole = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -148,7 +160,6 @@ public class HomeFrame extends javax.swing.JFrame {
         tab3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         tab3.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 160, 30));
 
-        partySize.setBackground(new java.awt.Color(153, 0, 0));
         partySize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(choose)", "1 guest", "2 guests", "3 guests", "4 guests", "5 guests", "6 guests", "7 guests", "8 guests", "9 guests", "10 guests", "11 guests", "12 guests", "13 guest", "14 guests", "15 guests", "16 guests", "17 guests", "18 guests", "19 guests", "20 guests", " " }));
         partySize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +168,6 @@ public class HomeFrame extends javax.swing.JFrame {
         });
         tab3.add(partySize, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 160, 50));
 
-        Time.setBackground(new java.awt.Color(153, 0, 0));
         Time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(choose)", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM" }));
         Time.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +175,32 @@ public class HomeFrame extends javax.swing.JFrame {
             }
         });
         tab3.add(Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 190, 160, 50));
+
+        reservationFor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tab3.add(reservationFor, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 380, 40));
+        tab3.add(status, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 180, 30));
+
+        confirmChanges.setBackground(new java.awt.Color(153, 0, 0));
+        confirmChanges.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        confirmChanges.setForeground(new java.awt.Color(255, 255, 255));
+        confirmChanges.setText("Confirm Changes");
+        confirmChanges.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmChangesActionPerformed(evt);
+            }
+        });
+        tab3.add(confirmChanges, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 100, 160, 60));
+
+        cancelReservation.setBackground(new java.awt.Color(153, 0, 0));
+        cancelReservation.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cancelReservation.setForeground(new java.awt.Color(255, 255, 255));
+        cancelReservation.setText("Cancel Reservation");
+        cancelReservation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelReservationActionPerformed(evt);
+            }
+        });
+        tab3.add(cancelReservation, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 160, 160, 60));
 
         Background2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Homepage (2).png"))); // NOI18N
         tab3.add(Background2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -192,6 +228,22 @@ public class HomeFrame extends javax.swing.JFrame {
             }
         });
         tab3.add(statusButt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 190, 100));
+
+        edit.setText("jButton1");
+        edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editActionPerformed(evt);
+            }
+        });
+        tab3.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 490, 150, 60));
+
+        cancel.setText("jButton2");
+        cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelActionPerformed(evt);
+            }
+        });
+        tab3.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 490, 130, 60));
 
         userTab.addTab("tab3", tab3);
 
@@ -266,6 +318,36 @@ public class HomeFrame extends javax.swing.JFrame {
         userTab.setSelectedComponent(tab3);
     }//GEN-LAST:event_statusButtActionPerformed
 
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        // TODO add your handling code here:
+        jDateChooser1.setDate(null);
+        partySize.setSelectedIndex(0);
+        Time.setSelectedIndex(0);
+        reservationFor.setText("");
+        jDateChooser1.setEnabled(false);
+        partySize.setEnabled(false);
+        Time.setEnabled(false);
+        reservationFor.setEnabled(false);
+        confirmChanges.setEnabled(false);
+    }//GEN-LAST:event_cancelActionPerformed
+
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        // TODO add your handling code here:
+        jDateChooser1.setEnabled(true);
+        partySize.setEnabled(true);
+        Time.setEnabled(true);
+        reservationFor.setEnabled(true);
+        confirmChanges.setEnabled(true);
+    }//GEN-LAST:event_editActionPerformed
+
+    private void confirmChangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmChangesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmChangesActionPerformed
+
+    private void cancelReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelReservationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelReservationActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -307,6 +389,10 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel Background2;
     private javax.swing.JPanel PWhole;
     private javax.swing.JComboBox<String> Time;
+    private javax.swing.JButton cancel;
+    private javax.swing.JButton cancelReservation;
+    private javax.swing.JButton confirmChanges;
+    private javax.swing.JButton edit;
     private javax.swing.JTextField firstName;
     private javax.swing.JTextField firstName1;
     private javax.swing.JTextField firstName2;
@@ -323,8 +409,10 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JButton profileButt2;
     private javax.swing.JButton profileButt3;
     private javax.swing.JButton reservationButt;
+    private javax.swing.JTextField reservationFor;
     private javax.swing.JToggleButton saveInfo;
     private javax.swing.JToggleButton signOut;
+    private javax.swing.JTextField status;
     private javax.swing.JButton statusButt;
     private javax.swing.JButton statusButt2;
     private javax.swing.JButton statusButt3;
