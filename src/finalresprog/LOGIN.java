@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Chupapi
  */
-public class LOGIN extends Connects {
+public class LOGIN extends connect {
 
     /**
      * Creates new form LOGIN

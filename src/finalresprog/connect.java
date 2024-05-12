@@ -12,18 +12,18 @@ import java.sql.SQLException;
  *
  * @author arell
  */
-public class connect {
+public class connect extends javax.swing.JFrame {
     private static final String JDBC_URL = "jdbc:derby://localhost:1527/ACCOUNT";
     private Connection connection;
+    String USERNAME, PASSWORD;
     
     public connect() {
         try {
-            // Load the JDBC driver
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            // Establish the connection
-            connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-            System.out.println("Connected to database.");
-        } catch (ClassNotFoundException | SQLException ex) {
+            String host = "jdbc:derby://localhost:1527/ACCOUNT [biguletto on BIGULETTO]";
+            String username = "biguletto";
+            String password = "20231148575";
+            Connection con = DriverManager.getConnection(host, username, password);
+        } catch (SQLException ex) {
             System.err.println("Error connecting to database.");
             ex.printStackTrace();
         }

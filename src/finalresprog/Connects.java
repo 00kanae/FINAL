@@ -21,7 +21,7 @@ public class Connects extends javax.swing.JFrame {
     ResultSet rs;
     DefaultTableModel LoginModel = new DefaultTableModel();
     int newID, i, temp_user, curRow, result;
-    String newPASS, newUSERTYPE, user, s, n, u, temp_pass, temp_usertype;
+    String newPASS, newUSERTYPE, user, s, n, u, temp_pass, temp_usertype, USERNAME, USERPASS;
 
     /**
      *
