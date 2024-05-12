@@ -15,7 +15,7 @@ import java.sql.Statement;
  * @author arell
  */
 
-public class Connect extends javax.swing.JFrame {
+public class Connects extends javax.swing.JFrame {
     Connection con;
     Statement stmt;
     ResultSet rs;
@@ -23,10 +23,13 @@ public class Connect extends javax.swing.JFrame {
     int newID, i, temp_user, curRow, result;
     String newPASS, newUSERTYPE, user, s, n, u, temp_pass, temp_usertype;
 
-    public void doConnect() {
+    /**
+     *
+     */
+    public Connects() {
         try {
             // CONNECT TO THE DATABASE
-            String host = "jdbc:derby://localhost:1527/UserAccount";
+            String host = "jdbc:derby://localhost:1527/ACCOUNT";
             String username = "kathleen";
             String password = "12345678";
             con = DriverManager.getConnection(host, username, password);
@@ -67,4 +70,3 @@ public class Connect extends javax.swing.JFrame {
         }
     }
 }
-

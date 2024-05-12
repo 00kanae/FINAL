@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Chupapi
  */
-public class LOGIN extends Connect {
+public class LOGIN extends Connects {
 
     /**
      * Creates new form LOGIN
@@ -107,7 +107,28 @@ public class LOGIN extends Connect {
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         //USERNAME = USER.getText();
+        String username = USER.getText();
+        String password = new String(PASS.getPassword());
+
+        Connect connect = new Connect();
+        Connection connection = connect.getConnection();
         
+        try {
+             String sql = "SELECT * FROM ACCOUNT WHERE username = ? AND password = ?";
+             PreparedStatement statement = connection.prepareStatement(sql);
+             statement.setString(1, username);
+             statement.setString(2, password);
+             ResultSet resultSet = statement.executeQuery();
+             if (resultSet.next()) {
+                 JOptionPane.showMessageDialog(this, "Login successful!");
+             } else {
+            JOptionPane.showMessageDialog(this, "Invalid username or password!");
+             }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    } finally {
+        connect.closeConnection();
+        }
         
     }//GEN-LAST:event_loginbtnActionPerformed
 
@@ -181,5 +202,4 @@ public class LOGIN extends Connect {
     private javax.swing.JButton register;
     // End of variables declaration//GEN-END:variables
 
-   
 }

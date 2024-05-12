@@ -6,6 +6,10 @@
 package finalresprog;
 
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
  
 public class RegistrationFrame extends javax.swing.JFrame {
@@ -200,6 +204,26 @@ public class RegistrationFrame extends javax.swing.JFrame {
         String email = txt2.getText();
         String orgpass = new String(pass1.getPassword());
         String confpass = new String(pass2.getPassword());
+        connect connect = new connect();
+        Connection connection = connect.getConnection();
+        
+        try {
+            String sql = "INSERT INTO ACCOUNT (username, email, password) VALUES (?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, email);
+            statement.setString(3, orgpass);
+             int rowsInserted = statement.executeUpdate();
+             if (rowsInserted > 0) {
+                 JOptionPane.showMessageDialog(this, "Registration successful!");
+             }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            connect.closeConnection();
+        }
+
+             
 
         boolean isValid = true;
         StringBuilder errorMessage = new StringBuilder();

@@ -50,7 +50,6 @@ public class AdminFrame extends javax.swing.JFrame {
         tab1.setLayout(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Admin Home.png"))); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(1200, 675));
         tab1.add(jLabel1);
         jLabel1.setBounds(0, 0, 1200, 675);
 
