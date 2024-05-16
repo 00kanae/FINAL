@@ -7,6 +7,7 @@ package finalresprog;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,31 +33,26 @@ public class ReservationFrame extends javax.swing.JFrame {
 
         tabsofReservation = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        dateReservation = new com.toedter.calendar.JDateChooser();
         Time = new javax.swing.JComboBox<>();
         partySize = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         bcg1 = new javax.swing.JLabel();
         contactInfo = new javax.swing.JButton();
         next = new javax.swing.JToggleButton();
         btn_back1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        txt1 = new javax.swing.JTextField();
-        txt2 = new javax.swing.JTextField();
-        txt3 = new javax.swing.JTextField();
-        txt4 = new javax.swing.JTextField();
-        labelerror = new javax.swing.JLabel();
-        btn_back = new javax.swing.JButton();
-        bcg = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
         btn_complete = new javax.swing.JButton();
+        bcg = new javax.swing.JLabel();
+        btn_back = new javax.swing.JButton();
         reservationTab = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(dateReservation, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 170, 40));
 
         Time.setBackground(new java.awt.Color(153, 0, 0));
         Time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(choose)", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM", "10:00 PM" }));
@@ -85,8 +81,9 @@ public class ReservationFrame extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(204, 0, 51));
         jLabel3.setText("Fill the forms and we'll try to provide you a wonderful experience.");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
+        jPanel2.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 170, 50));
 
-        bcg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Reservation Information.png"))); // NOI18N
+        bcg1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Reservation Information1.png"))); // NOI18N
         jPanel2.add(bcg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 675));
 
         contactInfo.setText("jButton1");
@@ -120,76 +117,18 @@ public class ReservationFrame extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt1.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox1.setText(" I AGREE ON TERMS AND CONDITIONS");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt1ActionPerformed(evt);
+                jCheckBox1ActionPerformed(evt);
             }
         });
-        txt1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt1KeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt1KeyReleased(evt);
-            }
-        });
-        jPanel1.add(txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 300, 30));
-
-        txt2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt2ActionPerformed(evt);
-            }
-        });
-        txt2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt2KeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txt2KeyReleased(evt);
-            }
-        });
-        jPanel1.add(txt2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, 330, 30));
-
-        txt3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt3ActionPerformed(evt);
-            }
-        });
-        txt3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt3KeyPressed(evt);
-            }
-        });
-        jPanel1.add(txt3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 300, 30));
-
-        txt4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txt4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, 330, 30));
-
-        labelerror.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        labelerror.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(labelerror, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 690, 20));
-
-        btn_back.setBackground(new java.awt.Color(153, 0, 0));
-        btn_back.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btn_back.setForeground(new java.awt.Color(255, 255, 255));
-        btn_back.setText("Cancel");
-        btn_back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_backActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 120, 50));
-
-        bcg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/srcImage/Contact Information1.png"))); // NOI18N
-        jPanel1.add(bcg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 675));
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 590, 230, 60));
 
         btn_complete.setBackground(new java.awt.Color(255, 255, 255));
         btn_complete.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        btn_complete.setText("Complete Reservation");
+        btn_complete.setText("Complete");
+        btn_complete.setEnabled(false);
         btn_complete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_completeActionPerformed(evt);
@@ -205,13 +144,27 @@ public class ReservationFrame extends javax.swing.JFrame {
         });
         jPanel1.add(btn_complete, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 500, 150, 60));
 
+        bcg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/srcImage/Terms & Condition (Concept).png"))); // NOI18N
+        jPanel1.add(bcg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 675));
+
+        btn_back.setBackground(new java.awt.Color(153, 0, 0));
+        btn_back.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btn_back.setForeground(new java.awt.Color(255, 255, 255));
+        btn_back.setText("Cancel");
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_backActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 600, 140, 60));
+
         reservationTab.setText("jButton1");
         reservationTab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reservationTabActionPerformed(evt);
             }
         });
-        jPanel1.add(reservationTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 190, 100));
+        jPanel1.add(reservationTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 500, 140, 60));
 
         tabsofReservation.addTab("tab1", jPanel1);
 
@@ -228,54 +181,15 @@ public class ReservationFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_backActionPerformed
 
     private void btn_completeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_completeActionPerformed
-        String firstName = txt1.getText();
-        String middleName = txt2.getText();
-        String contact = txt3.getText().trim();
-        String email = txt4.getText().trim();
-        
-        StringBuilder errorMessage = new StringBuilder();
-
-        if (firstName.isEmpty() || middleName.isEmpty() || contact.isEmpty() || email.isEmpty()) {
-            labelerror.setForeground(Color.RED);
-            labelerror.setText("Please fill in all fields. Thank you.");
-        return;
-
-        }
-        boolean isValid = true;
-        if (firstName.matches(".*\\d.*")) {
-            errorMessage.append("First name cannot contain numbers.\n");
-            isValid = false;
-        }
-        if (middleName.matches(".*\\d.*")) {
-            errorMessage.append("Middle name cannot contain numbers.\n");
-            isValid = false;
-        }
-        if (!contact.matches("\\d+")) {
-            errorMessage.append("Phone number can only contain digits.\n");
-            isValid = false;
-        }
-        if (!isValidPhoneNumber(contact)) {
-            errorMessage.append("Error. This is not a valid contact number.\n");
-            isValid = false;
-        }
-        if (!email.matches(".*@(gmail|yahoo)\\.com$")) {
-            errorMessage.append("Invalid email format. Use Gmail or Yahoo.\n");
-            isValid = false;
-        }
-        if (!isValid) {
-            labelerror.setForeground(Color.RED);
-            labelerror.setText(errorMessage.toString());
-        return;
-        }
+        JOptionPane.showMessageDialog(this, "Transaction complete, wait for confirmation.", "Transaction Complete", JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
         HomeFrame homeFrame = new HomeFrame(); // Create an instance of HomeFrame
         homeFrame.setVisible(true); // Make the HomeFrame visible
     }//GEN-LAST:event_btn_completeActionPerformed
 
     
-private boolean isValidPhoneNumber(String phoneNumber) {
-        return false;
         
-}
+
     private void btn_completeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn_completeKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_completeKeyPressed
@@ -283,86 +197,6 @@ private boolean isValidPhoneNumber(String phoneNumber) {
     private void btn_completeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn_completeKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_completeKeyTyped
-
-    private void txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt1ActionPerformed
-
-    private void txt1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1KeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txt2.requestFocusInWindow();
-        }
-    }//GEN-LAST:event_txt1KeyPressed
-
-    private void txt1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt1KeyReleased
-        String name = txt1.getText();
-        StringBuilder capitalized = new StringBuilder();
-        boolean capitalizeNext = true;
-        for (char c : name.toCharArray()) {
-            if (Character.isWhitespace(c)) {
-                capitalizeNext = true;
-                capitalized.append(c);
-            } else if (capitalizeNext) {
-                capitalized.append(Character.toUpperCase(c));
-                capitalizeNext = false;
-            } else {
-                capitalized.append(Character.toLowerCase(c));
-            }
-        }
-        txt1.setText(capitalized.toString());
-    }//GEN-LAST:event_txt1KeyReleased
-
-    private void txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt2ActionPerformed
-
-    private void txt2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2KeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txt3.requestFocusInWindow();
-        }
-    }//GEN-LAST:event_txt2KeyPressed
-
-    private void txt2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt2KeyReleased
-        // TODO add your handling code here:
-        String name = txt2.getText();
-        StringBuilder capitalized = new StringBuilder();
-        boolean capitalizeNext = true;
-        for (char c : name.toCharArray()) {
-            if (Character.isWhitespace(c)) {
-                capitalizeNext = true;
-                capitalized.append(c);
-            } else if (capitalizeNext) {
-                capitalized.append(Character.toUpperCase(c));
-                capitalizeNext = false;
-            } else {
-                capitalized.append(Character.toLowerCase(c));
-            }
-        }
-        txt2.setText(capitalized.toString());
-    }//GEN-LAST:event_txt2KeyReleased
-
-    private void txt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt3ActionPerformed
-
-    private void txt3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt3KeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            txt4.requestFocusInWindow();
-        }
-    }//GEN-LAST:event_txt3KeyPressed
-
-    private void txt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt4ActionPerformed
-
-    private void reservationTabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservationTabActionPerformed
-        // TODO add your handling code here:
-        tabsofReservation.setSelectedIndex(0);
-   
-    }//GEN-LAST:event_reservationTabActionPerformed
 
     private void contactInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactInfoActionPerformed
         // TODO add your handling code here:
@@ -390,6 +224,20 @@ private boolean isValidPhoneNumber(String phoneNumber) {
         homeFrame.setVisible(true);
         
     }//GEN-LAST:event_btn_back1ActionPerformed
+
+    private void reservationTabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservationTabActionPerformed
+        // TODO add your handling code here:
+        tabsofReservation.setSelectedIndex(0);
+
+    }//GEN-LAST:event_reservationTabActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+        boolean isChecked = jCheckBox1.isSelected();
+    
+        // Enable the "button_complete" if the checkbox is selected
+        btn_complete.setEnabled(isChecked);
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -434,19 +282,15 @@ private boolean isValidPhoneNumber(String phoneNumber) {
     private javax.swing.JButton btn_back1;
     private javax.swing.JButton btn_complete;
     private javax.swing.JButton contactInfo;
-    private com.toedter.calendar.JDateChooser dateReservation;
+    private javax.swing.JCheckBox jCheckBox1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel labelerror;
     private javax.swing.JToggleButton next;
     private javax.swing.JComboBox<String> partySize;
     private javax.swing.JButton reservationTab;
     private javax.swing.JTabbedPane tabsofReservation;
-    private javax.swing.JTextField txt1;
-    private javax.swing.JTextField txt2;
-    private javax.swing.JTextField txt3;
-    private javax.swing.JTextField txt4;
     // End of variables declaration//GEN-END:variables
 }

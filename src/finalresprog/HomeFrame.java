@@ -158,7 +158,7 @@ public class HomeFrame extends javax.swing.JFrame {
         userTab.addTab("tab2", tab2);
 
         tab3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        tab3.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 160, 30));
+        tab3.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 180, 40));
 
         partySize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(choose)", "1 guest", "2 guests", "3 guests", "4 guests", "5 guests", "6 guests", "7 guests", "8 guests", "9 guests", "10 guests", "11 guests", "12 guests", "13 guest", "14 guests", "15 guests", "16 guests", "17 guests", "18 guests", "19 guests", "20 guests", " " }));
         partySize.addActionListener(new java.awt.event.ActionListener() {

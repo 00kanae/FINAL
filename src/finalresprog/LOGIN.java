@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Chupapi
  */
-public class LOGIN extends connect {
+public class LOGIN {
 
     /**
      * Creates new form LOGIN
@@ -21,8 +21,7 @@ public class LOGIN extends connect {
     public LOGIN() {
         initComponents();
         //connect();
-       USER.setBackground (new java.awt.Color(0,0,0,1));
-       PASS.setBackground (new java.awt.Color(0,0,0,1));
+
     }
 
     /**
@@ -107,28 +106,7 @@ public class LOGIN extends connect {
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         //USERNAME = USER.getText();
-        String username = USER.getText();
-        String password = new String(PASS.getPassword());
-
-        Connect connect = new Connect();
-        Connection connection = connect.getConnection();
-        
-        try {
-             String sql = "SELECT * FROM ACCOUNT WHERE username = ? AND password = ?";
-             PreparedStatement statement = connection.prepareStatement(sql);
-             statement.setString(1, username);
-             statement.setString(2, password);
-             ResultSet resultSet = statement.executeQuery();
-             if (resultSet.next()) {
-                 JOptionPane.showMessageDialog(this, "Login successful!");
-             } else {
-            JOptionPane.showMessageDialog(this, "Invalid username or password!");
-             }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    } finally {
-        connect.closeConnection();
-        }
+     
         
     }//GEN-LAST:event_loginbtnActionPerformed
 
@@ -201,5 +179,13 @@ public class LOGIN extends connect {
     private javax.swing.JButton loginbtn;
     private javax.swing.JButton register;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
